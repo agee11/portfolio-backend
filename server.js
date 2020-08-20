@@ -11,9 +11,9 @@ app.use(express.json());
 app.use(express.urlencoded({extended: false}));
 app.use(cors());
 
-app.listen(4000, () => {
-  console.log("Listening to port 4000");
-})
+let port = process.env.PORT || 4000;
+
+app.listen(port);
 
 mongoose.connect(process.env.MONGODB_URL, {useNewUrlParser: true, useUnifiedTopology: true });
 
@@ -34,13 +34,4 @@ app.get("/projects", function(req, res){
       res.send(projects);
     }
   });
-})
-
-// const mj = new Project({
-//   name: "Drink Finder",
-//   image: "url",
-//   features: ["Auto suggest", "CSS Animations", "Multi-Ingredient Search"],
-//   skills: ["HTML", "CSS", "JavaScript", "CocktailDB API", "Twitter Typeahead"]
-// })
-//
-// mj.save();
+});

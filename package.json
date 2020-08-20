@@ -9,6 +9,9 @@
   "type": "module",
   "author": "",
   "license": "ISC",
+  "engines": {
+    "node": "12.18.1"
+  },
   "dependencies": {
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
